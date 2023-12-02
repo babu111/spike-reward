@@ -1,16 +1,8 @@
-# SpikeGPT: Generative Pre-trained Language Model with Spiking Neural Networks
+# Modifying SpikeGPT: Generative Pre-trained Language Model with Spiking Neural Networks
 
 <p align="center" float="center">
   <img src="https://github.com/ridgerchu/SpikeGPT/blob/master/static/spikegpt.png"/>
 </p>
-
-SpikeGPT is a lightweight generative language model with pure binary, event-driven spiking activation units. The arxiv paper of SpikeGPT can be found [here](https://arxiv.org/abs/2302.13939).
-
-If you are interested in SpikeGPT, feel free to join our Discord using this [link](https://discord.gg/gdUpuTJ6QZ)!
-
-This repo is inspired by the [RWKV-LM](https://github.com/BlinkDL/RWKV-LM).
-
-If you find yourself struggling with environment configuration, consider using the Docker image for SpikeGPT available on [Github](https://github.com/eddiem3/SpikeGPT-container).
 
 ## Training on Enwik8
 
@@ -30,9 +22,6 @@ You can choose to run inference with either your own customized model or with ou
 
 
 ## Citation
-
-
-If you find SpikeGPT useful in your work, please cite the following source:
 
 ```
 @article{zhu2023spikegpt,
