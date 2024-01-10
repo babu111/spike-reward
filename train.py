@@ -6,7 +6,7 @@ import logging
 import datetime
 import json
 from src.model import GPT, GPTConfig
-from src.trainer import Trainer, TrainerConfig
+from src.old_trainer import Trainer, TrainerConfig
 from src.utils import Dataset
 import torch
 import numpy as np
@@ -108,5 +108,5 @@ if __name__ == '__main__':
 
     trainer.train()
 
-    torch.save(model.state_dict(), 'trained-' + str(n_epoch) + '-' + trainer.get_run_name() +
+    torch.save(model.state_dict(), './checkpoints/trained-' + str(n_epoch) + '-' + trainer.get_run_name() +
                '-' + datetime.datetime.today().strftime('%Y-%m-%d-%H-%M-%S') + '.pth')

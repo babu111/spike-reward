@@ -356,7 +356,10 @@ class GPT(nn.Module):
                                       for i in range(config.n_layer)])
         self.atan = atan()
         self.ln_out = nn.LayerNorm(config.n_embd)
-        self.head = nn.Linear(config.n_embd, config.vocab_size, bias=False)
+        if config.reward == True:
+            self.head = nn.Linear(config.n_embd, 1, bias=False)
+        else:
+            self.head = nn.Linear(config.n_embd, config.vocab_size, bias=False)
 
         if RWKV_HEAD_QK_DIM > 0:
             self.head_q = nn.Linear(config.n_embd, RWKV_HEAD_QK_DIM, bias=False)
@@ -423,6 +426,7 @@ class GPT(nn.Module):
         x = self.atan(self.emb(idx))
         x = self.blocks(x)
         x = self.ln_out(x)
+        # print(x.shape)
 
         if RWKV_HEAD_QK_DIM > 0:
             q = self.head_q(x)[:, :T, :]
@@ -445,4 +449,6 @@ class GPT(nn.Module):
         if targets is not None:
             loss = F.cross_entropy(x.view(-1, x.size(-1)), targets.to(x.device).view(-1))
 
-        return L2Wrap.apply(loss, x)
+            return L2Wrap.apply(loss, x)
+        else:
+            return x

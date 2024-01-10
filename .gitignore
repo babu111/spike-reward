@@ -1,0 +1,7 @@
+checkpoints/
+wandb/
+enwik8
+vocab_book.json
+vocab.json
+runs/
+src/__pycache__/
