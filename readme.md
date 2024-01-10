@@ -1,7 +1,7 @@
-# Modifying SpikeGPT: Generative Pre-trained Language Model with Spiking Neural Networks
+# Encoding Human Preference of Sentences via Spiking Neural Networks
 
 ## Environment Setup
-Pull the docker image fromm [SpikeGPT Container](https://github.com/eddiem3/SpikeGPT-container).
+Pull the docker image from [SpikeGPT Container](https://github.com/eddiem3/SpikeGPT-container).
 
 ## Pre-training on Enwik8
 
